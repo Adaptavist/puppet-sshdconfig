@@ -1,0 +1,46 @@
+Port 22
+Protocol 2
+
+<% if @osfamily == "RedHat" -%>
+SyslogFacility AUTHPRIV
+Subsystem   sftp    /usr/libexec/openssh/sftp-server
+<% elsif @osfamily == "Debian" -%>
+SyslogFacility AUTH
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+LogLevel INFO
+Subsystem sftp /usr/lib/openssh/sftp-server
+<% end -%>
+
+PasswordAuthentication yes
+ChallengeResponseAuthentication no
+UsePAM yes
+
+UsePrivilegeSeparation yes
+
+KeyRegenerationInterval 3600
+ServerKeyBits 768
+LoginGraceTime 120
+
+# XXX: Should be no
+PermitRootLogin yes
+
+StrictModes yes
+RSAAuthentication yes
+PubkeyAuthentication yes
+IgnoreRhosts yes
+RhostsRSAAuthentication no
+HostbasedAuthentication no
+PermitEmptyPasswords no
+
+X11Forwarding yes
+X11DisplayOffset 10
+PrintMotd no
+PrintLastLog yes
+TCPKeepAlive yes
+
+AcceptEnv LANG LC_*
+AcceptEnv XMODIFIERS
+
+AllowGroups sudo adm sudo-nopass wheel root
