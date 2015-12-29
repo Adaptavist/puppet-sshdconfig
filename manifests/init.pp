@@ -11,7 +11,7 @@ class sshdconfig(
         owner   => 'root',
         group   => 'root',
         mode    => '0644',
-        content => template("$config_template"),
+        content => template($config_template),
         notify  => Service[$service_name],
     }
 
