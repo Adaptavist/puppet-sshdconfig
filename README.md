@@ -1,4 +1,5 @@
 # SSHDConfig Module
+[![Build Status](https://travis-ci.org/Adaptavist/puppet-sshdconfig.svg?branch=master)](https://travis-ci.org/Adaptavist/puppet-sshdconfig)
 
 ## Overview
 
