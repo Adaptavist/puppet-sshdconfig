@@ -1,7 +1,7 @@
 class sshdconfig(
         $config_template = "${module_name}/sshd_config.erb",
     ) {
-  
+
     $service_name = $::osfamily ? {
         /Debian/ => 'ssh',
         /RedHat/ => 'sshd',
