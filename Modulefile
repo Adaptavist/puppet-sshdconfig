@@ -1,5 +1,5 @@
 name 'adaptavist-sshdconfig'
-version '1.0.0'
+version '1.0.1'
 source 'https://github.com/Adaptavist/puppet-sshdconfig.git'
 author 'adaptavist'
 summary 'sshdconfig puppet module' 
